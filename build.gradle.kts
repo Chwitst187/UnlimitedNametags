@@ -1,10 +1,10 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
-    id("com.gradleup.shadow") version "8.3.2"
+    id("com.gradleup.shadow") version "9.2.2"
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "2.0.0"
-    id("xyz.jpenilla.run-paper") version "2.3.1"
+    id("org.jetbrains.kotlin.jvm") version "2.1.21"
+    id("xyz.jpenilla.run-paper") version "3.0.2"
 }
 
 group = "org.alexdev"
