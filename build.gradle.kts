@@ -153,6 +153,10 @@ kotlin {
 }
 
 tasks.named<Jar>("jar").configure {
+    enabled = false
+}
+
+tasks.named("assemble").configure {
     dependsOn("shadowJar")
 }
 tasks.named<Delete>("clean").configure {
