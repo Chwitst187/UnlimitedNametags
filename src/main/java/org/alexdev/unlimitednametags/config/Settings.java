@@ -56,8 +56,9 @@ public class Settings {
     private float viewDistance = 60;
 
     @Comment("""
-            Which text formatter to use (MINIMESSAGE, MINEDOWN, LEGACY or UNIVERSAL)\s
-            Take note that UNIVERSAL is the most resource intensive but it supports all formatting options (except for MINEDOWN)\s
+            Which text formatter to use (MINIMESSAGE, MINEDOWN, LEGACY, UNIVERSAL or ALL)\s
+            ALL automatically detects and supports MiniMessage, MiniDown, Legacy and Legacy Hex syntax.\s
+            UNIVERSAL is kept as a backwards-compatible alias for the automatic mode.\s
             
             (&x&0&8&4&c&f&bc LEGACY OF LEGACY - &#084cfbc LEGACY - &#084cfbc& MINEDOWN - <color:#084cfbc> MINIMESSAGE)""")
     @Setter

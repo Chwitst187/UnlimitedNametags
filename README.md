@@ -36,8 +36,9 @@ Enhance your server's customization by tailoring player name tags, integrating d
 - **⚙️ Easy Configuration**: Simple yet powerful configuration via `settings.yml`.
 - **🛠️ Bedrock Support**: Limited Bedrock compatibility through Geyser; text displays are converted into armor stands due to platform restrictions.
 - **📏 Conditional Lines**: Add or remove lines dynamically based on specific conditions or placeholders.
-- **🔤 Multiple Text Formatters**: Choose from **MINIMESSAGE**, **MINEDOWN**, **LEGACY**, or **UNIVERSAL** formats:
-   - **UNIVERSAL**: The most resource-intensive but supports all formatting options (except for **MINEDOWN**).  
+- **🔤 Multiple Text Formatters**: Choose from **MINIMESSAGE**, **MINEDOWN**, **LEGACY**, **UNIVERSAL**, or **ALL** formats:
+   - **ALL**: Automatically detects and supports **MINIMESSAGE**, **MINEDOWN**, **LEGACY**, and **LEGACY OF LEGACY** syntax.  
+   - **UNIVERSAL**: Backwards-compatible alias for the automatic mode.  
      Examples:
       - **LEGACY OF LEGACY**: `&x&0&8&4&c&f&bc`
       - **LEGACY**: `&#084cfbc`
