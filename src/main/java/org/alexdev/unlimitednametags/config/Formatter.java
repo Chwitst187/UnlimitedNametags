@@ -152,7 +152,7 @@ public enum Formatter {
             case 'e' -> "yellow";
             case 'f' -> "white";
             case 'k' -> "obfuscated";
-            case 'l' -> "bold";
+            case 'l' -> "b";
             case 'm' -> "strikethrough";
             case 'n' -> "underlined";
             case 'o' -> "italic";
