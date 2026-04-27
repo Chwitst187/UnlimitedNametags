@@ -55,7 +55,7 @@ public enum Formatter {
 
     @NotNull
     private static String normalizeLegacyText(@NotNull String text) {
-        return replaceHexColorCodes(text).replaceAll("(?i)&#([a-f0-9]{6})&", "&#$1");
+        return replaceHexColorCodes(text).replace("\\n", "\n");
     }
 
     @NotNull
