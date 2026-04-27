@@ -1,7 +1,9 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
     id("com.gradleup.shadow") version "9.2.2"
+    id("com.github.ben-manes.versions") version "0.52.0"
     id("java")
     id("org.jetbrains.kotlin.jvm") version "2.1.21"
     id("xyz.jpenilla.run-paper") version "3.0.2"
@@ -131,6 +133,30 @@ tasks.named<ShadowJar>("shadowJar") {
     archiveFileName.set("${project.name}.jar")
 
     minimize()
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.uppercase().contains(it) }
+    val stableRegex = "^[0-9,.v-]+(-r)?$".toRegex()
+    return !(stableKeyword || stableRegex.matches(version))
+}
+
+tasks.withType<DependencyUpdatesTask>().configureEach {
+    // Verhindert, dass Vorab-Versionen als Update vorgeschlagen werden.
+    rejectVersionIf {
+        isNonStable(candidate.version) && !isNonStable(currentVersion)
+    }
+
+    checkForGradleUpdate = true
+    outputFormatter = "plain"
+    outputDir = "build/dependencyUpdates"
+    reportfileName = "report"
+}
+
+tasks.register("updateDependencies") {
+    group = "help"
+    description = "Prueft verfuegbare Dependency-Updates (nur stabile Releases)."
+    dependsOn("dependencyUpdates")
 }
 
 tasks.withType<JavaCompile> {
