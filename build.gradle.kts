@@ -152,7 +152,7 @@ kotlin {
     jvmToolchain(21)
 }
 
-tasks.named<Jar>("jar").configure {
+tasks.named("build").configure {
     dependsOn("shadowJar")
 }
 tasks.named<Delete>("clean").configure {

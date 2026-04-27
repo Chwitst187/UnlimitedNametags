@@ -61,7 +61,7 @@ public class Settings {
             
             (&x&0&8&4&c&f&bc LEGACY OF LEGACY - &#084cfbc LEGACY - &#084cfbc& MINEDOWN - <color:#084cfbc> MINIMESSAGE)""")
     @Setter
-    private Formatter format = Formatter.MINIMESSAGE;
+    private Formatter format = Formatter.UNIVERSAL;
 
     @Comment("Whether to disable the default name tag or not.")
     private boolean disableDefaultNameTag = true;
